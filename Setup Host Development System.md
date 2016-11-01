@@ -1,27 +1,11 @@
-## Setup Host Development System
-### Option 1 - Download and Install VMWARE Player (Free)
-1.	Download and install VMWARE from [here][1]   
-
-2.	Download and install UBUNTU image for VMWARE from [here][2]  
-
-3.	Tutorial help can be found [here][3] or [here][4] or [here][5]  
-
-### Option 2 - Download and Install VirtualBox Player (Free)
-1.	Download and install VirtualBox from [here][6]  
-
-2.	Download and install UBUNTU image for VirtualBox from [here][7]   
-
-3.	Tutorial help can be found [here][8]  
-
-Other Images can be found [here][9]. Alternately you can install Dual-boot Linux and Windows OS on your system. Live CD or USB method is not recommended.
-
 # Installing Angstrom Image on BBB
-Whether you have a BeagleBone or BeagleBone Black, you can use the Angstrom-Cloud9-IDE-GNOME-eglibc-ipk???.img.xz. Download the latest image form [here][10]. They both run ARM7 and the image has the NEON optimization.
+Whether you have a BeagleBone or BeagleBone Black, you can use the Angstrom-Cloud9-IDE-GNOME-eglibc-ipk???.img.xz. Download the latest image form [here][1]. They both run ARM7 and the image has the NEON optimization.
 ## How to Unpack and Boot the Demo Image - easy way
 - Download an img.gz or img.xz file from above e.g. Angstrom-Cloud9-IDE-eglibc-ipk-v2011.10-core-beaglebone-r0.img.gz (or a more recent version).
 - Unpack the image to the raw BeagleBone/BBB SD card using the below commands. NOTE: superuser privileges are required when unpacking the image. Also, an SD card reader installed in the linux system running on VMware is needed. If your computer has a built in SD card reader/writer use it by installing the VMware drivers. Else, get an external USB SD card reader/writer and install the USB drivers for linux (you would not need one).
 Note that all images with *eMMC* file names are flasher images that will flash the eMMC. All images with *ipk* file names are run from the SD card.
 ### In Linux:
+
 $ sudo -s
 (type in your password)
 > zcat Angstrom-Cloud9-IDE-eglibc-ipk-v2011.10-core-beaglebone-r0.img.gz \> /dev/sdX
@@ -30,6 +14,7 @@ Or for the img.xz:
 $ sudo -s
 (type in your password)
 > xz -dkc Angstrom-Cloud9-IDE-eglibc-ipk-v2011.10-core-beaglebone-r0.img.xz \> /dev/sdX # exit
+
 PS: The SD card location of your device should be replacing the term /dev/sdX
 
 ## How to Unpack and Boot the Demo Image - the hard way 
@@ -40,7 +25,8 @@ PS: The SD card location of your device should be replacing the term /dev/sdX
 - Unpack the tarball to the root partition of your BeagleBone SD card. NOTE: superuser privileges are required when unpacking the image so that device nodes can be created on the SD card filesystem.
 
 ### In Linux:
-$ sudo tar -xjv -C /media/rootfs -f /path/to/Angstrom-BeagleBone-demo-image??rootfs.tar.bz2
+
+$ sudo tar -xjv -C /media/rootfs -f /path/to/Angstrom-BeagleBone-demo-image??rootfs.tar.bz2 
 This assumes that the SD card has the root filesystem (ext3) partition mounted as /media/rootfs.
 Ensure all SD card filesystem operations have completed (ie. filesystem cache has flushed to SD card) and eject the SD card from your development machine. Most operating systems have a "Safely Remove" action to perform this from the Desktop.
 Insert SD card into BeagleBone and power it up.
@@ -64,16 +50,4 @@ Unzip the file you downloaded to a directory on your PC
 
 
 
-# Programming 
-
-
-[1]:	http://www.vmware.com/products/player/
-[2]:	http://www.osboxes.org/ubuntu/%0A
-[3]:	http://processors.wiki.ti.com/index.php/How_to_Build_a_Ubuntu_Linux_host_under_VMware%0A
-[4]:	http://wiki.opencog.org/w/Setting_up_Ubuntu_in_VMWare_for_Noobs%0A
-[5]:	http://theholmesoffice.com/installing-ubuntu-in-vmware-player-on-windows/
-[6]:	http://www.vmware.com/products/player/
-[7]:	https://www.osboxes.org/virtualbox-images/
-[8]:	http://processors.wiki.ti.com/index.php/How_to_Build_a_Ubuntu_Linux_host_under_VirtualBox
-[9]:	http://processors.wiki.ti.com/index.php/How_to_Build_a_Ubuntu_Linux_host_under_VirtualBox
-[10]:	http://downloads.angstrom-distribution.org/demo/beaglebone/
+[1]:	http://downloads.angstrom-distribution.org/demo/beaglebone/
