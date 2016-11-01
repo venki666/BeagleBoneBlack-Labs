@@ -3,20 +3,23 @@ Whether you have a BeagleBone or BeagleBone Black, you can use the Angstrom-Clou
 ## How to Unpack and Boot the Demo Image - easy way
 - Download an img.gz or img.xz file from above e.g. Angstrom-Cloud9-IDE-eglibc-ipk-v2011.10-core-beaglebone-r0.img.gz (or a more recent version).
 - Unpack the image to the raw BeagleBone/BBB SD card using the below commands. NOTE: superuser privileges are required when unpacking the image. Also, an SD card reader installed in the linux system running on VMware is needed. If your computer has a built in SD card reader/writer use it by installing the VMware drivers. Else, get an external USB SD card reader/writer and install the USB drivers for linux (you would not need one).
-Note that all images with *eMMC* file names are flasher images that will flash the eMMC. All images with *ipk* file names are run from the SD card.
+  Note that all images with *eMMC* file names are flasher images that will flash the eMMC. All images with *ipk* file names are run from the SD card.
 ### In Linux:
-~
 $ sudo -s
 (type in your password)
-> zcat Angstrom-Cloud9-IDE-eglibc-ipk-v2011.10-core-beaglebone-r0.img.gz \> /dev/sdX
-> exit
+
+$zcat Angstrom-Cloud9-IDE-eglibc-ipk-v2011.10-core-beaglebone-r0.img.gz \> /dev/sdX
+$exit
+
+
 Or for the img.xz:
 $ sudo -s
 (type in your password)
-> xz -dkc Angstrom-Cloud9-IDE-eglibc-ipk-v2011.10-core-beaglebone-r0.img.xz \> /dev/sdX # exit
-~
+$xz -dkc Angstrom-Cloud9-IDE-eglibc-ipk-v2011.10-core-beaglebone-r0.img.xz \> /dev/sdX # exit
+
 PS: The SD card location of your device should be replacing the term /dev/sdX
----- 
+
+----
 ## How to Unpack and Boot the Demo Image - the hard way 
 (only follow this if you have problems with the pervious method - Linux OS needed)
 
@@ -25,16 +28,17 @@ PS: The SD card location of your device should be replacing the term /dev/sdX
 - Unpack the tarball to the root partition of your BeagleBone SD card. NOTE: superuser privileges are required when unpacking the image so that device nodes can be created on the SD card filesystem.
 
 ### In Linux:
-~
+
 $ sudo tar -xjv -C /media/rootfs -f /path/to/Angstrom-BeagleBone-demo-image??rootfs.tar.bz2 
-~
+
+
 This assumes that the SD card has the root filesystem (ext3) partition mounted as /media/rootfs.
 Ensure all SD card filesystem operations have completed (ie. filesystem cache has flushed to SD card) and eject the SD card from your development machine. Most operating systems have a "Safely Remove" action to perform this from the Desktop.
 Insert SD card into BeagleBone and power it up.
 
 ### In Windows:
 - Download the image file as above use eMMC or ipk files
-Unzip the file you downloaded to a directory on your PC
+  Unzip the file you downloaded to a directory on your PC
 - Download the DiskImager software to copy the unzipped image file to the microSD card from the directory on your PC where you unzipped the file.
 - Unzip the above downloaded software into a folder on the PC. If you choose, you can use the same folder as the program to be flashed is in.
 - Run the WinDiskImager application. A small window will appear.
