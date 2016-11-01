@@ -6,14 +6,19 @@ Whether you have a BeagleBone or BeagleBone Black, you can use the Angstrom-Clou
 Note that all images with *eMMC* file names are flasher images that will flash the eMMC. All images with *ipk* file names are run from the SD card.
 ### In Linux:
 
-$ sudo -s \\
-(type in your password) \\
-zcat Angstrom-Cloud9-IDE-eglibc-ipk-v2011.10-core-beaglebone-r0.img.gz \> /dev/sdX
-exit
+$ sudo -s  
+(type in your password)   
+
+$zcat Angstrom-Cloud9-IDE-eglibc-ipk-v2011.10-core-beaglebone-r0.img.gz \> /dev/sdX  
+
+$exit  
+
 Or for the img.xz:
-$ sudo -s
-(type in your password)
-xz -dkc Angstrom-Cloud9-IDE-eglibc-ipk-v2011.10-core-beaglebone-r0.img.xz \> /dev/sdX # exit
+$ sudo -s 
+(type in your password)  
+
+$xz -dkc Angstrom-Cloud9-IDE-eglibc-ipk-v2011.10-core-beaglebone-r0.img.xz \> /dev/sdX # exit  
+
 
 PS: The SD card location of your device should be replacing the term /dev/sdX
 ---- 
@@ -26,7 +31,8 @@ PS: The SD card location of your device should be replacing the term /dev/sdX
 
 ### In Linux:
 
-/*$ sudo tar -xjv -C /media/rootfs -f /path/to/Angstrom-BeagleBone-demo-image??rootfs.tar.bz2 */
+
+$ sudo tar -xjv -C /media/rootfs -f /path/to/Angstrom-BeagleBone-demo-image??rootfs.tar.bz2   
 
 This assumes that the SD card has the root filesystem (ext3) partition mounted as /media/rootfs.
 Ensure all SD card filesystem operations have completed (ie. filesystem cache has flushed to SD card) and eject the SD card from your development machine. Most operating systems have a "Safely Remove" action to perform this from the Desktop.
